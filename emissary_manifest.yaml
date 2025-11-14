@@ -2,20 +2,20 @@
 
 project: GeniusLoci/KuboEmissary
 repository: https://github.com/Genius-Loci-OS/kubo-emissary
-project_enum: {b64_uuid_signed}/{b64_pubkey}/{b64_key_guid}
-semantic_version: 0.30.0-alpha
+project_enum: ipns-cid
+semantic_version: 0.30.0-alpha-${USER}_${STAMP}
 description: Instance of IPFS Kubo (go) built as an Emissary for Genius-Loci ServiceCore
 
 registry:
-  world_enum: {b64_uuid_signed}/{b64_pubkey}/{b64_key_guid} {maybe an enum is an ipns cid?}
-  entity_enum: {b64_uuid_signed}/{b64_pubkey}/{b64_key_guid}
-  entity_pubkey: {b64_pubkey}
-  entity_peerid: {libp2p cid/peerid for the entity server}
-  entity_dns: {dns list for the entity server}
+  world_enum: ipns-cid
+  entity_enum: ipns-cid
+  entity_peerid: ipns-cid
+  entity_dns: dns list for the entity server
 
 builds:
   - architecture: x86_64
     platform: ubuntu-24.04
+    emissary_type: executable
     build_docker_image: 
     build_script:
     executable_product:
